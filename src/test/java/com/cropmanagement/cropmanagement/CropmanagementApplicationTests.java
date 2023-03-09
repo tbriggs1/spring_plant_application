@@ -1,10 +1,10 @@
-package com.cropm.cm;
+package com.cropmanagement.cropmanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CmApplicationTests {
+class CropmanagementApplicationTests {
 
 	@Test
 	void contextLoads() {

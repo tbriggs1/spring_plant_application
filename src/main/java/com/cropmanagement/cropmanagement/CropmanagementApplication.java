@@ -1,13 +1,13 @@
-package com.cropm.cm;
+package com.cropmanagement.cropmanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CmApplication {
+public class CropmanagementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CmApplication.class, args);
+		SpringApplication.run(CropmanagementApplication.class, args);
 	}
 
 }
