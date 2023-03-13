@@ -1,9 +1,7 @@
 package com.cropmanagement.cropmanagement.crop;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -23,5 +21,23 @@ public class CropController {
     @GetMapping
     public List<Crop> getCrops() {
         return cropService.getCrops();
+    }
+
+    @PostMapping
+    public void addCrop(@RequestBody Crop crop){
+        cropService.addNewCrop(crop);
+    }
+
+    @DeleteMapping(path = "{cropId}")
+    public void deleteCrop(@PathVariable("cropId") Long cropId){
+        cropService.deleteCrop(cropId);
+    }
+
+    @PutMapping(path = "{cropId}")
+    public void updateCrop(
+            @PathVariable("cropId") Long cropId,
+            @RequestParam(required = false) String cropName,
+            @RequestParam(required = false) String email){
+        cropService.updateCrop(cropId, cropName, email);
     }
 }

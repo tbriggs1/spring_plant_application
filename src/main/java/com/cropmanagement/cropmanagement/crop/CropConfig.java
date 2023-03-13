@@ -16,12 +16,14 @@ public class CropConfig {
         return args -> {
             Crop tomato = new Crop(
                     "Tomato",
-                    LocalDate.of(2023, Month.MARCH, 5)
+                    LocalDate.of(2023, Month.MARCH, 5),
+                    "tomb1234@hotmail.co.uk"
             );
 
             Crop pumpkin = new Crop(
                     "pumpkin",
-                    LocalDate.of(2023, Month.AUGUST, 12)
+                    LocalDate.of(2022, Month.AUGUST, 12),
+                    "tomb123@hotmail.co.uk"
             );
 
             repository.saveAll(
