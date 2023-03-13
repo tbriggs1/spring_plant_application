@@ -1,8 +1,23 @@
 package com.cropmanagement.cropmanagement.crop;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Crop {
+
+    @Id
+    @SequenceGenerator(
+            name = "crop_sequence",
+            sequenceName = "crop_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "crop_sequence"
+    )
     private Long id;
     private String cropName;
     private LocalDate planted;

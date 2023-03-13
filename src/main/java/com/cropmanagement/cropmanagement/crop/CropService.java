@@ -1,20 +1,22 @@
 package com.cropmanagement.cropmanagement.crop;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 @Service
 public class CropService {
+
+    private final CropRepository cropRepository;
+
+    @Autowired
+    public CropService(CropRepository cropRepository){
+        this.cropRepository = cropRepository;
+    }
+
+
     public List<Crop> getCrops() {
-        return List.of(
-                new Crop(
-                        1L,
-                        "Tomato",
-                        LocalDate.of(2023, Month.MARCH, 5)
-                )
-        );
+        return cropRepository.findAll();
     }
 }
